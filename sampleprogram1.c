@@ -10,6 +10,11 @@
 
 int main(int argc, char *argv[])
 {
+// create and initialize semaphore
+int semid = semget(IPC_PRIVATE, 1, 0600);
+int semctl(semId, 0, SETVAL, 1);
+
+
 int status;
 long int i, loop, temp, *sharedMemoryPointer;
 int sharedMemoryID;
